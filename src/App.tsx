@@ -14,7 +14,6 @@ import {
   Camera,
   Smartphone,
   Monitor,
-  Cpu,
   Aperture,
   Youtube,
   Zap,
@@ -38,9 +37,7 @@ import {
   SiNodedotjs,
   SiFigma,
   SiPython,
-  SiOllama,
-  SiFlutter,
-  SiNextdotjs
+  SiOllama
 } from 'react-icons/si';
 
 // Types
