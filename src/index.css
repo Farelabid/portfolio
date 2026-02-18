@@ -332,3 +332,104 @@ body {
   line-height: 1;
   pointer-events: none;
 }
+
+/* ═══════════════════════════════════════════════
+   CUSTOM CURSOR
+   ═══════════════════════════════════════════════ */
+
+/* Hide system cursor on desktop only */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #F97316;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  will-change: transform;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, opacity 0.2s ease;
+}
+
+/* ═══════════════════════════════════════════════
+   PRELOADER
+   ═══════════════════════════════════════════════ */
+
+@keyframes preloaderBar {
+  0% { width: 0%; }
+  50% { width: 60%; }
+  100% { width: 90%; }
+}
+
+.preloader-logo {
+  animation: preloaderPulse 1.5s ease-in-out infinite;
+}
+
+.preloader-logo-exit {
+  animation: preloaderExit 0.5s ease-out forwards;
+}
+
+@keyframes preloaderPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes preloaderExit {
+  to { opacity: 0; transform: scale(1.2); }
+}
+
+/* Smooth transition duration utility */
+.duration-600 {
+  transition-duration: 600ms;
+}
+.duration-400 {
+  transition-duration: 400ms;
+}
+
+/* ═══════════════════════════════════════════════
+   MAGNETIC BUTTON HINT
+   ═══════════════════════════════════════════════ */
+
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.magnetic-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.1);
+}
+
+/* ═══════════════════════════════════════════════
+   SCROLLBAR: HIDE ON MOBILE FOR CLEANER LOOK
+   ═══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
